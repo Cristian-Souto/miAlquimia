@@ -1,0 +1,101 @@
+/*RESPONSIVE WEB DESIGN */
+
+@media(max-width:480px){
+    .contenido__principal p {
+        font-size: var(--size-body-text);
+        color: var(--text-color-claro);
+        text-align: center;
+        width:90%;
+        margin-top: 30px;
+    }
+    .contenido__principal h1{
+        text-align: center;
+        font-size: 1.5rem;
+        margin-top: 30px;
+    }
+    .side__right,
+    .side__left {
+        width: 100%;
+    }
+    .side__right h1,
+    .side__left h1 {
+        font-size: 1.4em;     
+    }
+    .side__right p,
+    .side__left p {
+        width: 100%;
+    }
+   
+}
+@media (max-width:980px) {
+    body{
+        overflow-x: hidden;
+    }
+    .logo{
+        display: none;
+    }
+    .menu_burger{
+        width: 100%; 
+        align-items: flex-end;
+        cursor: pointer;
+        margin-right: 1rem;
+    }
+    .menu_burger div{
+        display: block;
+        margin-left: 20px;
+        transition: all 0.3s ease;        
+    }
+    .aside{
+        flex-direction: column;
+    }
+    .side__left,
+    .side__right{
+        width: 100%;
+    }
+    /*ul */
+    .items__nav {
+        background-color:rgba(0, 0, 0, .8); 
+        width:100%;
+        height:300px;
+        display: flex;
+        flex-direction: column;       
+        align-items: center;
+        position:absolute;
+        top:0;
+        left:0;
+        /*trasladamos en el eje x la ubicacion del Ul, de esta forma la ocultamos*/
+        transform: translateX(-100%);
+        transition: transform 0.5s ease-in;
+    }
+    .items__nav li{
+        opacity: 0;
+    }
+    /*
+      Trasladamos en el eje X la ul a la ubicacion 0, vuelve a estar en pantalla.
+      Esta clase se activara o desactivara, cuando hagamos click en el menu-burger.
+    */
+    .nav-active{
+        transform: translateX(0%);
+    }
+    /*animacion de los links -> a*/
+    @keyframes navLinksFade {
+        from{
+            opacity: 0;
+            transform: translateY(-40px);
+        }
+        to{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    /*animacion del menu-burger*/
+    .toggle .linea1{
+        transform:rotateZ(-45deg) translate(-6px, 9px);
+    }
+    .toggle .linea2{
+        opacity: 0;
+    }
+   .toggle .linea3{
+        transform:rotateZ(45deg) translate(-7px,-9px);
+    }
+}
